@@ -1,0 +1,28 @@
+<form [formGroup]="bookEditForm" data-test="form">
+  <mat-form-field class="d-block" data-test="title-input">
+    <mat-label>Title</mat-label>
+    <input type="text" autocomplete="off" matInput placeholder="Title" formControlName="title" />
+  </mat-form-field>
+
+  <mat-form-field class="d-block" data-test="year-input">
+    <mat-label>Year</mat-label>
+    <input type="text" autocomplete="off" matInput placeholder="Year" formControlName="year" />
+  </mat-form-field>
+
+  <mat-form-field class="d-block" data-test="genre-input">
+    <mat-label>Genre</mat-label>
+    <input type="text" autocomplete="off" matInput placeholder="Genre" formControlName="genre" />
+  </mat-form-field>
+
+  <button
+    data-test="submit-button"
+    type="submit"
+    mat-raised-button
+    color="primary"
+    class="w-100"
+    [disabled]="!bookEditForm.valid"
+    (click)="onEditBook()"
+  >
+    {{ buttonText }}
+  </button>
+</form>

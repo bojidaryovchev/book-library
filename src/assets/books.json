@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "title": "Book 1",
+    "genre": "Genre 1",
+    "year": 1999
+  },
+  {
+    "id": "2",
+    "title": "Book 2",
+    "genre": "Genre 2",
+    "year": 2003
+  },
+  {
+    "id": "3",
+    "title": "Book 3",
+    "genre": "Genre 3",
+    "year": 1989
+  }
+]

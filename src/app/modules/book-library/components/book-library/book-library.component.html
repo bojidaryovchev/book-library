@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-8">
+      <mat-form-field class="w-100" data-test="search-field">
+        <mat-label>Search</mat-label>
+        <input type="text" autocomplete="off" matInput placeholder="Search" [(ngModel)]="searchValue" />
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <button type="button" class="w-100" mat-raised-button color="primary" (click)="onBookAdd()">Add Book</button>
+    </div>
+  </div>
+
+  <ng-container *ngIf="books$ | async as books">
+    <app-books-table
+      [books]="books | searchBooks: searchValue | sortBooks: sort"
+      (bookEdit)="onBookEdit($event)"
+      (bookDelete)="onBookDelete($event)"
+      (booksSort)="onSort($event)"
+    ></app-books-table>
+  </ng-container>
+</div>
